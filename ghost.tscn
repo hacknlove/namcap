@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://m8ost7yb8p2o"]
+
+[ext_resource type="Script" path="res://ghost.gd" id="1_endfv"]
+[ext_resource type="Texture2D" uid="uid://cpg8v6teair2f" path="res://sprites.png" id="1_l7qbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_six0i"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(552, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytuxg"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(568, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx5eb"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(457, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbuf1"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(473, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joutc"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(520, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yt4b"]
+atlas = ExtResource("1_l7qbg")
+region = Rect2(536, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cog7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_six0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytuxg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx5eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbuf1")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joutc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yt4b")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bptb"]
+size = Vector2(14, 14)
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_endfv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6cog7")
+animation = &"down"
+autoplay = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8bptb")
+
+[node name="to_down_left" type="RayCast2D" parent="."]
+position = Vector2(-7, 0)
+target_position = Vector2(0, 8)
+
+[node name="to_up_left" type="RayCast2D" parent="."]
+position = Vector2(-7, 0)
+target_position = Vector2(0, -8)
+
+[node name="to_left_up" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-8, 0)
+
+[node name="to_right_up" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(8, 0)
+
+[node name="to_right_down" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(8, 0)
+
+[node name="_to_left_down" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(-8, 0)
+
+[node name="to_down_right" type="RayCast2D" parent="."]
+position = Vector2(7, 0)
+target_position = Vector2(0, 8)
+
+[node name="to_up_right2" type="RayCast2D" parent="."]
+position = Vector2(7, 0)
+target_position = Vector2(0, -8)
