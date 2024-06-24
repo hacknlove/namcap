@@ -79,32 +79,32 @@ shape = SubResource("RectangleShape2D_8bptb")
 
 [node name="to_down_left" type="RayCast2D" parent="."]
 position = Vector2(-7, 0)
-target_position = Vector2(0, 8)
-
-[node name="to_up_left" type="RayCast2D" parent="."]
-position = Vector2(-7, 0)
-target_position = Vector2(0, -8)
-
-[node name="to_left_up" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
-target_position = Vector2(-8, 0)
-
-[node name="to_right_up" type="RayCast2D" parent="."]
-position = Vector2(0, -7)
-target_position = Vector2(8, 0)
-
-[node name="to_right_down" type="RayCast2D" parent="."]
-position = Vector2(0, 7)
-target_position = Vector2(8, 0)
-
-[node name="_to_left_down" type="RayCast2D" parent="."]
-position = Vector2(0, 7)
-target_position = Vector2(-8, 0)
+target_position = Vector2(0, 9)
 
 [node name="to_down_right" type="RayCast2D" parent="."]
 position = Vector2(7, 0)
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 9)
 
-[node name="to_up_right2" type="RayCast2D" parent="."]
+[node name="to_left_down" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(-9, 0)
+
+[node name="to_left_up" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-9, 0)
+
+[node name="to_right_down" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(9, 0)
+
+[node name="to_right_up" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(9, 0)
+
+[node name="to_up_left" type="RayCast2D" parent="."]
+position = Vector2(-7, 0)
+target_position = Vector2(0, -9)
+
+[node name="to_up_right" type="RayCast2D" parent="."]
 position = Vector2(7, 0)
 target_position = Vector2(0, -8)
