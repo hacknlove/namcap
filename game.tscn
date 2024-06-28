@@ -1,11 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://3yllj5717uo4"]
+[gd_scene load_steps=4 format=3 uid="uid://3yllj5717uo4"]
 
 [ext_resource type="PackedScene" uid="uid://bvyuupm12j7m6" path="res://map.tscn" id="1_lfvb3"]
 [ext_resource type="PackedScene" uid="uid://m8ost7yb8p2o" path="res://ghost.tscn" id="2_sifql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejr5o"]
+size = Vector2(208, 232)
 
 [node name="Game" type="Node"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_lfvb3")]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_sifql")]
-position = Vector2(106, 116)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(112, 9)
+shape = SubResource("RectangleShape2D_ejr5o")
+
+[node name="Ghost" parent="." instance=ExtResource("2_sifql")]
+position = Vector2(127, 115)
+collision_layer = 2
+
+[node name="Ghost2" parent="." instance=ExtResource("2_sifql")]
+position = Vector2(99, 116)
+collision_layer = 2
+color = "yellow"
+
+[node name="Ghost3" parent="." instance=ExtResource("2_sifql")]
+position = Vector2(104, 117)
+collision_layer = 2
+color = "blue"
+
+[node name="Ghost4" parent="." instance=ExtResource("2_sifql")]
+position = Vector2(113, 115)
+collision_layer = 2
+color = "pink"

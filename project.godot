@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=224
 window/size/viewport_height=248
+window/stretch/mode="canvas_items"
 
 [rendering]
 
